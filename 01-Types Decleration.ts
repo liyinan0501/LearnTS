@@ -1,5 +1,20 @@
+// 浏览器和node不识别.ts文件，需要把ts文件转成js文件。
+// 1.install TypeScript
+// sudo npm install -g typescript
+
+// 因为不能直接执行 ts 文件，需要用 tsc 转译。
+// tsc -v 查看版本号
+// 用命令 tsc test.ts （会将ts转成js文件）
+// 再用命令 node test.js 执行js文件。
+// 此方法比较繁琐，需安装 ts-node。
+
+// 2.install ts-node package
+// npm install -g ts-node
+//* ts-node test.ts 直接运行。
+
+// 真正做项目无需这样ts-node，可以直接写ts，webpack 自动将 ts 转成 js。
+
 // tsc --init
-// ts-node 01-comments.ts
 //* 原始类型
 let num: number = 18
 let uname: string = 'zs'

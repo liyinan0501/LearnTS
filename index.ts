@@ -1,4 +1,4 @@
-let dataArray = [
+let data = [
   {
     properties: {
       scoreA: 15604,
@@ -233,18 +233,36 @@ let dataArray = [
 //   return output
 // }
 
-const date = '2022-05-12T17:58:53.589Z'
-const reg = /^\d{4}-\d{1,2}-\d{1,2}/
-const regDate: any = date.match(reg)
-// console.log(regDate[0])
-// dataArray.map((item: any) => {
-//   if (item.properties.timestamp.test(reg) === regDate) console.log(item)
-// })
-console.log(dataArray[0]['timestamp'])
+// const date = '2022-05-12T17:58:53.589Z'
+// const reg = /^\d{4}-\d{1,2}-\d{1,2}/
+// const regDate: any = date.match(reg)
+// // console.log(regDate[0])
+// // dataArray.map((item: any) => {
+// //   if (item.properties.timestamp.test(reg) === regDate) console.log(item)
+// // })
+// console.log(dataArray[0]['timestamp'])
 
-for (let i = 0; i < dataArray.length; i++) {
-  if (dataArray[i]['timestamp'].includes(regDate)) {
-    console.log(dataArray[i])
+// for (let i = 0; i < dataArray.length; i++) {
+//   if (dataArray[i]['timestamp'].includes(regDate)) {
+//     console.log(dataArray[i])
+//   }
+//   // console.log(dataArray[i]['timestamp'].includes(regDate))
+// }
+
+let rankArray = new Array(3).fill(0)
+// let newArray = [3, 5, 1]
+// console.log(newArray[newArray.length - 1])
+// // newArray.sort((a, b) => a - b)
+// // console.log(newArray)
+const DeviceNames: Array<string> = ['Ios', 'Android']
+const property = 'scoreA'
+
+for (let i = 0; i < data.length; i++) {
+  if (data[i].deviceProps.type === DeviceNames[0]) {
+    rankArray.sort((a, b) => b - a)
+    if (data[i].properties[property] > rankArray[rankArray.length - 1]) {
+      rankArray[rankArray.length - 1] = data[i].properties[property]
+    }
   }
-  // console.log(dataArray[i]['timestamp'].includes(regDate))
 }
+console.log(rankArray)

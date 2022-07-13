@@ -16,7 +16,7 @@ let res = fn(123)
 let res1 = fn('abc')
 // 如果推断不出来需要用<>声明类型
 
-// 泛型添加约束：
+//* 泛型添加约束：
 // 目的是收缩泛型的取值范围
 interface ILength {
   length: number
@@ -37,6 +37,7 @@ function setElement<Type extends HTMLElement>(element: Type): Type {
 // const a = document.createElement('a')
 // setElement(a) // 传<a>元素
 
+//* 多个泛型:
 // keyof 可以获取到一个类型接口的所有的key的联合类型
 // keyof 从 {name:'zs', age:18} 可以得到 'name' | 'age'
 // key 的取值来源只能是 Type 类型中所有的key
@@ -52,3 +53,30 @@ const user3 = {
   age: 15,
 }
 getProperty(user3, 'age')
+
+//* 泛型接口
+interface IArray<Type> {
+  length: number
+  push?(n: Type): void
+  pop?(): Type
+  reverse?(): Type[]
+}
+const arr1: IArray<number> = {
+  length: 10,
+  push(n: number) {
+    console.log(n)
+  },
+  pop() {
+    return 100
+  },
+  reverse() {
+    return [1, 2, 3]
+  },
+}
+arr1.push(123)
+
+const arr2: IArray<string> = {
+  length: 0,
+}
+arr2.push('123')
+arr2.pop()
