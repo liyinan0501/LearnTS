@@ -68,6 +68,7 @@
     return num1 + num2
   }
   // 方法2
+  // 用 type 定义函数类型
   type Fn = (n1: number, n2: number) => number //定义返回类型
   const add2: Fn = (n1, n2) => {
     // n1 和 n2 不必与上一行 n1 n2 一致。
