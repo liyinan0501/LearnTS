@@ -139,24 +139,6 @@
   }
   console.log(user.add(3, 2)) //5
 
-  //* interface 继承
-  interface IPoint2D {
-    x: number
-    y: number
-  }
-  interface IPoint3D extends IPoint2D {
-    z: number
-  }
-  const point: IPoint2D = {
-    x: 100,
-    y: 100,
-  }
-  const point2: IPoint3D = {
-    x: 100,
-    y: 100,
-    z: 100,
-  }
-
   // 方法2: -用花括号直接指定类型
   // 指定对象类型时，用分号隔开可以并一行。
   const user1: {
@@ -213,9 +195,28 @@
    * type 和 interface 区别：
    * 在指定对象中，用 type 和 用 interface 指定类型是一样的。
    * 早期用 interface 指定类型。
-   * Type 方法更强大，可以指定任意类型，而interface 只能为对象指定类型。
+   * type 方法更强大，可以指定任意类型，而interface 只能为对象指定类型。
+   * interface 可以继承，而 type 不可以。
    * !能用 type 就用 type 方法
    */
+
+  //* interface 继承
+  interface IPoint2D {
+    x: number
+    y: number
+  }
+  interface IPoint3D extends IPoint2D {
+    z: number
+  }
+  const point: IPoint2D = {
+    x: 100,
+    y: 100,
+  }
+  const point2: IPoint3D = {
+    x: 100,
+    y: 100,
+    z: 100,
+  }
 
   // Exercise
   interface IPerson {
