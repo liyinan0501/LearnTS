@@ -231,10 +231,12 @@
     person.sayHi('abc')
   }
 
-  //*元祖 tuple
+  //Todo 7. 元祖类型 tuple
+  // 指定数组里面有多少个元素
   // 经纬度坐标[]
   let position: [number, number] = [118.112, 123.123]
   let position1: [number, string] = [123, 'abc']
+  // Example: hooks
   // const [num, setNum] = useState()
   function setState(n: number): [number, (n: number) => void] {
     let num = n
