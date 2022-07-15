@@ -232,7 +232,7 @@
   }
 
   //Todo 7. 元祖类型 tuple
-  // 指定数组里面有多少个元素
+  // 元祖可以精确数组里面元素个数，而正常数组不可以。
   // 经纬度坐标[]
   let position: [number, number] = [118.112, 123.123]
   let position1: [number, string] = [123, 'abc']
