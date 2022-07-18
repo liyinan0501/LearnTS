@@ -247,14 +247,20 @@
   }
   const [n, setN] = setState(0)
 
-  //*字面量类型
+  //Todo 8. 字面量类型
   // 字面量类型一般要配合联合类型使用 |
   let str: string = 'hello'
   let str2: 'abc' = 'abc'
+
+  // 字面量类型，const str3 类型就是 ‘hello’
+  // const str3 ='hello' 和 let str3: 'abc' = 'abc' 等于下面：
   const str3: 'hello' = 'hello'
+
   // 变量：值可以发生改变的量
   // 字面量：直接量：通过字面就能够看懂值得类型：’abc‘ 199 {} true
+
   // 贪吃蛇游戏
+  // let direction: 'up' | 'down' | 'left' | 'right' = 'up'
   type Direction = 'up' | 'down' | 'left' | 'right'
   function changeDirection(direction: Direction): void {
     console.log(direction)
@@ -264,7 +270,7 @@
   interface User {
     name: string
     age: number
-    gender: 'Man' | 'Woman'
+    gender: 'Man' | 'Woman' // 字面量联合类型
   }
   const user2: User = {
     name: 'zs',
@@ -276,8 +282,12 @@
   type ActionType = 'ADD' | 'DEL' | 'UPDATE'
   let t: ActionType = 'ADD'
 
-  //* 枚举 enum
-  // 定义枚举
+  //Todo 9. 枚举 enum
+  // (了解) 表示一组明确的可选值
+  // 定义枚举，首字母大写。
+
+  // enum 与type 区别：枚举不仅仅是类型，还是值，而 type 只是type。
+
   // 1.数字类型枚举
   enum Direct {
     // 指定枚举类型的值
@@ -287,10 +297,29 @@
     Right,
   }
   function changeDirect(direction: Direct) {
-    console.log(direction)
+    // 枚举不仅仅是类型，还是值。
+    console.log(direction) // 2
   }
-  changeDirect(Direct.Down)
-  console.log(typeof Direct[1])
+  // 验证：枚举不仅仅是类型，还是值。
+  console.log(Direct)
+  /* 枚举得到的是一个对象：
+    {
+      '1': 'Up',
+      '2': 'Down',
+      '3': 'Left',
+      '4': 'Right',
+      Up: 1,
+      Down: 2,
+      Left: 3,
+      Right: 4
+    }
+  */
+  changeDirect(Direct.Down) // 使用枚举
+
+  // 枚举 可以通过类型得到值，也可以通过值得到类型：
+  console.log(Direct.Up) // 1
+  console.log(Direct[2]) // Down
+
   // 应用：发送请求，需要用户的性别：男 ：女   0  1
   enum Gender {
     Woman,
