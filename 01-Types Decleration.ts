@@ -283,7 +283,7 @@
   let t: ActionType = 'ADD'
 
   //Todo 9. 枚举 enum
-  // (了解) 表示一组明确的可选值
+  // (了解) 表示一组明确的可选值，转换成 js 的文件更大。
   // 定义枚举，首字母大写。
 
   // enum 与type 区别：枚举不仅仅是类型，还是值，而 type 只是type。
@@ -291,7 +291,7 @@
   // 1.数字类型枚举
   enum Direct {
     // 指定枚举类型的值
-    Up = 1, // 正常起始值为0 可以改变起始值和所有的值
+    Up = 1, // 正常起始值为0,1,2,3 可以改变起始值从1开始，之后是2,3,4。
     Down,
     Left,
     Right,
@@ -328,28 +328,32 @@
   function send(gender: Gender) {
     console.log(gender)
   }
+  console.log('1111')
+  send(Gender.Woman) // 0
   send(Gender.Man) // 1
-  send(Gender.Woman) // 2
+
   // 2.字符串类型枚举
+  // 指定了第一个字符串，之后的所有的都需要指定。
   enum Gender1 {
     Woman = 'woman',
     Man = 'woman',
   }
 
-  //* Type Assertion 类型断言
+  //Todo 10. Type Assertion 类型断言
+  // 你比 ts 更了解类型，可以用类型断言。
   // 主要用途：操作dom的时候
   // 解决问题：推断不出来这个是个img 元素
   // const box = document.getElementById('img') as HTMLImageElement // React JSX 适用
-  // = const box = <HTMLImageElement>document.getElementById('img') React JSX 不适用
+  // = const box = <HTMLImageElement>document.getElementById('img') // React JSX 不适用
   // console.log(box.src)
   // const box1 = document.getElementById('a') as HTMLAnchorElement
   // console.log(box1.href)
 
   // 如果不知道标签是什么类型，可以用createElement查找，鼠标放上去就显示出来。
   // document.createElement('a')
-  // console.log($0__proto__);
+  // console.log($0__proto__)
 
-  //* typeof
+  //Todo 11. typeof
   // 根据已有变量的值，获取该值得类型，来简化类型书写。
   // 作用：
   // 1.不用typeof 需定义接口：
