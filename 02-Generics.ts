@@ -60,7 +60,7 @@ const user3 = {
 getProperty(user3, 'age') // 15
 
 //Todo 4. 泛型接口 Generics Interface
-// 封装接口的时候，有一些类型无法写死，需要用泛型接口。
+// 封装接口的时候，有一些类型无法写成固定的，需要用泛型接口。
 interface IArray<Type> {
   length: number
   push?(n: Type): void
