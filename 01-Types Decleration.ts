@@ -5,7 +5,7 @@
 
   // 因为不能直接执行 ts 文件，需要用 tsc 转译。
   // tsc -v 查看版本号
-  // 用命令 tsc test.ts （会将ts转成js文件）
+  // 用命令 tsc test.ts （会将ts转成js文件） 还可以用 tsc test.ts --target es6 转成指定版本的 js 文件。
   // 再用命令 node test.js 执行js文件。
   // 此方法比较繁琐，需安装 ts-node。
 
