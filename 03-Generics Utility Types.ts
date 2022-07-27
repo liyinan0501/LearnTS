@@ -1,3 +1,4 @@
+// 四个常用的泛型工具
 //Todo 1. Partial
 type User = {
   name: string
