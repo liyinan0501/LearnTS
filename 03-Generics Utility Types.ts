@@ -5,7 +5,7 @@ type User = {
   age: number
   gender: string
 }
-// 接收一个类型，返回一个新类型，新类型中的所有属性编程可选的。
+// 接收一个类型，返回一个新类型，新类型中的所有属性变成可选的。
 type PartialUser = Partial<User>
 
 //Todo 2. Readonly
